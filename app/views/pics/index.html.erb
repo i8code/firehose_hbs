@@ -1,0 +1,28 @@
+<h1 class="h1-custom">
+
+
+	New York! 
+
+</h1>
+
+
+<% @pics.each do |pic| %>
+<div class="span4 boxy text-center">
+	<h1 class="h1-custom">
+		Place: <%= pic.emotion %>
+	</h1>
+
+	<br/>
+	<h2>
+		Description: <%= pic.description %>
+		<br/>
+		<br/>
+		Location: <%= pic.location %>
+		<br/>
+	</h2>
+
+	</div>
+<% end %> 
+
+
+
