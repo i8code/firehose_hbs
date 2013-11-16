@@ -27,7 +27,7 @@ private
 #slurp up these paramaters
 def pic_params
 	# permit the user to upload these things into your site 
-	params.require(:pic).permit(:emotion, :description, :location)
+	params.require(:pic).permit(:place, :description, :location)
 
 	end
 
