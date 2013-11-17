@@ -13,13 +13,14 @@
 }
 
 body {
-	background: url('rock.JPG') no-repeat center center fixed; 
+	background: url('nystand.jpg') no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
   	font-family: Helvetica Neue Light, Helvetica Neue, Helvetica, san-serif;
   	color:white;
+  	font-size: 18px;
 
 }
 
