@@ -16,9 +16,12 @@
 <!-- where does this file lives, display the image-->
 <%= image_tag pic.image %>
 
-
 	<br/>
 	<body>
+
+		<%= link_to pic.place, pics_path(:place => pic.place) %>
+
+		<br/>
 		<%= pic.description %>
 		<br/>
 		<br/>
