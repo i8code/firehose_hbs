@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
       config.fog_directory  = ENV['AWS_BUCKET']               # required
 
       # use the S3
-      config.storgae = :fog
+      config.storage = :fog
 
   #for test enviro use local storage 
   else
