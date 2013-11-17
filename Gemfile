@@ -33,8 +33,10 @@ group :doc do
 end
 
 gem "twitter-bootstrap-rails"
-
+# a form
 gem 'simple_form'
+# add pic uploader
+gem 'carrierwave'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -15,7 +15,7 @@ class PicsController < ApplicationController
 
 	end
 
-	#do...end, def...end
+	#do...end, def...end, passes all parameters from the simple form into this array
 	def create 
 			@pic = Pic.create( pic_params )
 			redirect_to pics_path
@@ -27,7 +27,7 @@ private
 #slurp up these paramaters
 def pic_params
 	# permit the user to upload these things into your site 
-	params.require(:pic).permit(:place, :description, :location)
+	params.require(:pic).permit(:place, :description, :location, :image)
 
 	end
 

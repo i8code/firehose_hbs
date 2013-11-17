@@ -10,8 +10,14 @@
 		<%= simple_form_for @pic do |f|%>
 
 			<%= f.input :place, :label => 'Where should we go?', :placeholder => 'Hayden Planetarium Star Show' %>
+
 			<%= f.input :description, :label => 'Tell me something about it' , :placeholder => 'Stargaze from Manhattan, anytime.'  %>
+
 			<%= f.input :location, :label => 'Address'  , :placeholder => '81 Central Park West, New York, NY 10023' %>
+
+			<br/>
+			<br/>
+			<%= f.input :image, :label => '...Upload!'%>
 
 		<br/>
 
