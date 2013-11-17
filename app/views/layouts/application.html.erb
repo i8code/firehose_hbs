@@ -6,7 +6,8 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<!--make a rule to change the background for each page-->
+<body class="<%= "#{params[:controller]}-#{params[:action]}" %>">
 
 <!--bootstrap responsive nav-->
 <div class="navbar navbar-inverse">

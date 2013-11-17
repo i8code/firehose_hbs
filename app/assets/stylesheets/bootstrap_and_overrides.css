@@ -24,6 +24,13 @@ body {
 
 }
 
+
+
+body.pics-index {
+
+	background: url('nytaxi.jpg') no-repeat center center fixed; 
+}
+
 .h1-custom{
 	font-family: Helvetica Neue Light, Helvetica Neue, Helvetica, san-serif;
 	font-weight: 100;
