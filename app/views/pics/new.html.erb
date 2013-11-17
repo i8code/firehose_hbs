@@ -1,12 +1,24 @@
-<h2>
-	<%= simple_form_for @pic do |f|%>
-		<%= f.input :place %>
-		<%= f.input :description %>
-		<%= f.input :location %>
 
-		<%=submit_tag 'Save' %>
+	<div class="span6 offset3 text-center boxy">
+		
+		<h1 class="h1-custom">
+			More NYC...
+		</h1>
+
+		<br/>
+
+		<%= simple_form_for @pic do |f|%>
+
+			<%= f.input :place, :label => 'Where should we go?', :placeholder => 'Hayden Planetarium Star Show' %>
+			<%= f.input :description, :label => 'Tell me something about it' , :placeholder => 'Stargaze from Manhattan, anytime.'  %>
+			<%= f.input :location, :label => 'Address'  , :placeholder => '81 Central Park West, New York, NY 10023' %>
+
+		<br/>
+
+		<%=submit_tag 'Save', :class => 'btn btn-info btn-large' %>
+</div>
 	<%end%>
 
-	hello!
-</h2>
+
+
 
