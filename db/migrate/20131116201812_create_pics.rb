@@ -1,7 +1,7 @@
 class CreatePics < ActiveRecord::Migration
   def change
     create_table :pics do |t|
-		t.string :emotion
+		t.string :emotion #place
 		t.text :description
 		t.text :location 
 	  	t.timestamps

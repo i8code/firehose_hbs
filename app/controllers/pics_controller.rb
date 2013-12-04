@@ -41,5 +41,11 @@ class PicsController < ApplicationController
 
 	end
 
+	#added
+	def map
+		#loads most recent place, always pull the last row in the table
+		@location = Location.last
+	end
+
 
 end

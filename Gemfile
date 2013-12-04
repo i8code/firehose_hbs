@@ -44,6 +44,17 @@ gem 'carrierwave'
 #connect to S3
 gem "fog", "~> 1.3.1"
 
+#install geokit gem 
+gem 'geokit'
+#AIzaSyDzleZt1Cn-Ha1cn19cC8LOKVFueX_iYB4
+
+group :test, :development do 
+
+	end
+
+	group :production do
+
+	end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

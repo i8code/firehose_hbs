@@ -42,7 +42,7 @@ body.pics-index {
 	font-family: Helvetica Neue Light, Helvetica Neue, Helvetica, san-serif;
 	font-weight: 100;
 	font-size: 64px;
-
+	margin-left:30px;
 	color: white;
 	line-height: 63px;
 }
@@ -60,3 +60,10 @@ label {
 	font-size: 18px;
 	color:white;
 }
+
+#map-canvas {
+        height: 100%;
+        margin: 10px;
+        padding: 0px
+      }
+

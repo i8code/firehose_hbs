@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E, ken: AIzaSyDzleZt1Cn-Ha1cn19cC8LOKVFueX_iYB4-->
+<!--Resources
+https://developers.google.com/speed/libraries/devguide#jquery
+
+
+-->
+<html>
+<head>
+
+  <!--Insert map from API-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <title>NYC Adventure Map</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+
+
+  <script src="//maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E"
+  type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+  $(function() {
+
+    $( window ).unload(function() {
+      GUnload();
+    });
+
+
+    if (GBrowserIsCompatible()) {
+
+         // embed 2D map in DOM from pset8
+         /*var latlng = new google.maps.LatLng(-74.006393, 40.714172);
+         
+         
+
+          map = new google.maps.Map($("#map_canvas").get(0), {
+          center: latlng,
+          disableDefaultUI: true,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+          zoom: 17,
+          zoomControl: true  } */
+
+
+
+          var map = new GMap2(document.getElementById("map_canvas"));
+          map.setCenter(new GLatLng(40.714623, -74.006605), 13);
+          var map = new GMap2(document.getElementById("map_canvas"));
+          var point = new GLatLng(40.714623,-74.006605);
+          //map.addOverlay(new GMarker(point));
+
+        }
+
+      });
+
+  </script>
+  <div style="height:100%; width:100%;">
+
+    <!--Map style on Webpage-->
+    <div id="map_canvas" style="width: 500px; height: 500px; margin: 10px; float:left; width: 50%">
+    </div>
+  </div>
+
+  <!--Side recs on webpage-->
+  <div class="span4 boxy text-center" style="float:right; margin: 10px; width: 42%"> 
+    New York Recs here
+    <br/>
+    <br/>
+    Im a rocking place
+    <br/>
+    <br/>
+    and so am I 
+    <br/>
+    <br/>
+    and me too 
+  </div>
+
+  <!--<div id="map-canvas"></div>-->
+
+
+</head>
+<body>
+
+
+</body>
+
+</html>

@@ -1,15 +1,12 @@
 <h1 class="h1-custom">
-
-
 	New York! 
-
 </h1>
 
 
 <% @pics.each do |pic| %>
 <div class="span4 boxy text-center">
 	<h2>
-		<%= pic.place %>
+		<%= pic.location %>
 	</h2>
 
 
@@ -19,7 +16,7 @@
 	<br/>
 	<body>
 
-		<%= link_to pic.place, pics_path(:place => pic.place) %>
+		<%= link_to pic.location, map_map_path(:place => pic.location) %>
 
 		<br/>
 		<%= pic.description %>
