@@ -6,7 +6,7 @@
 <% @pics.each do |pic| %>
 <div class="span4 boxy text-center">
 	<h2>
-		<%= pic.location %>
+		<%= pic.place %>
 	</h2>
 
 
@@ -15,14 +15,12 @@
 
 	<br/>
 	<body>
-
-		<%= link_to pic.location, map_map_path(:place => pic.location) %>
-
 		<br/>
 		<%= pic.description %>
 		<br/>
 		<br/>
-		<%= pic.location %>
+		<!--<%= pic.location %>-->
+		<%= link_to pic.location, map_map_path(:place => pic.location) %>
 		<br/>
 	</body>
 

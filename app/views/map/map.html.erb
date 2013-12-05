@@ -7,28 +7,32 @@ https://developers.google.com/speed/libraries/devguide#jquery
 -->
 <html>
 <head>
-
-  <!--Insert map from API-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <title>NYC Adventure Map</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
+  <div>
 
 
 
-  <script src="//maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E"
-  type="text/javascript"></script>
-
-  <script type="text/javascript">
-
-  $(function() {
-
-    $( window ).unload(function() {
-      GUnload();
-    });
+    <!--Insert map from API-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>NYC Adventure Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
 
 
-    if (GBrowserIsCompatible()) {
+
+    <script src="//maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E"
+    type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+
+    $(function() {
+
+      $( window ).unload(function() {
+        GUnload();
+      });
+
+
+      //if (GBrowserIsCompatible()) {
 
          // embed 2D map in DOM from pset8
          /*var latlng = new google.maps.LatLng(-74.006393, 40.714172);
@@ -46,39 +50,80 @@ https://developers.google.com/speed/libraries/devguide#jquery
 
 
           var map = new GMap2(document.getElementById("map_canvas"));
-          map.setCenter(new GLatLng(40.714623, -74.006605), 13);
-          var map = new GMap2(document.getElementById("map_canvas"));
-          var point = new GLatLng(40.714623,-74.006605);
-          //map.addOverlay(new GMarker(point));
+          // center of map, zoom
+          map.setCenter(new GLatLng(40.77464310, -73.97019620), 13);
 
-        }
+          var map = new GMap2(document.getElementById("map_canvas"));
+          
+          $("section").each(function() {
+
+            var encoded = $(this).html();
+            var array_version = encoded.split("|");
+            var lat = array_version[0];
+            var lng = array_version[1];
+            var point = new GLatLng(lat, lng);
+            map.addOverlay(new GMarker(point));
+
+          });
+          
+
+          //var marker = new google.maps.Marker({
+          //position: new google.maps.LatLng(40.764843, -73.05279),
+          //map: map,
+          //title:"Marker is here"
+
+
+
+        //}
 
       });
 
-  </script>
-  <div style="height:100%; width:100%;">
 
-    <!--Map style on Webpage-->
-    <div id="map_canvas" style="width: 500px; height: 500px; margin: 10px; float:left; width: 50%">
+
+
+</script>
+
+
+<div style="height:100%; width:100%;">
+
+  <!--Map style on Webpage-->
+  <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; float:left; width: 50%">
+  </div>
+</div>
+
+
+
+<!--Side recs on webpage-->
+<div class="span4 boxy text-center" style="float:right; margin: 10px; width: 42%"> 
+  New York Recs here
+  <br/>
+  <br/>
+  Im a rocking place
+  <br/>
+  <br/>
+  and so am I 
+  <br/>
+  <br/>
+  and me too 
+
+  <div>
+    <% @pics.each do |pic| %>
+    <div class="span4 boxy text-center">
+      <h2>
+        <%= pic.place %>
+      </h2>
+         <%= pic.location %>
+         <section style="display: none;">
+            <%= pic.lat.to_s + "|" + pic.lng.to_s %>
+         </section>
     </div>
+
+    <% end %> 
   </div>
 
-  <!--Side recs on webpage-->
-  <div class="span4 boxy text-center" style="float:right; margin: 10px; width: 42%"> 
-    New York Recs here
-    <br/>
-    <br/>
-    Im a rocking place
-    <br/>
-    <br/>
-    and so am I 
-    <br/>
-    <br/>
-    and me too 
-  </div>
+</div>
 
-  <!--<div id="map-canvas"></div>-->
-
+<!--<div id="map-canvas"></div>-->
 
 </head>
 <body>

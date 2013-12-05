@@ -39,7 +39,7 @@ class PicsController < ApplicationController
 	# permit the user to upload these things into your site 
 	params.require(:pic).permit(:place, :description, :location, :image)
 
-	end
+end
 
 	#added
 	def map
