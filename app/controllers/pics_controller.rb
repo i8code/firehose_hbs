@@ -13,6 +13,20 @@ class PicsController < ApplicationController
 
 	end 
 
+	def show
+#get the value and store it into the datab
+		@picsAll = Pic.all
+
+		if params[:id].present?
+			@pic = Pic.find_by_id(params[:id])
+		
+			@picsNearby = Pic.within(2, origin: @pic)
+		end
+			
+			
+
+	end
+
 	def new
 
 		#building a blank thng, filling it out on the form

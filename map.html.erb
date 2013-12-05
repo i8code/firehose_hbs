@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<!--AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E, ken: AIzaSyDzleZt1Cn-Ha1cn19cC8LOKVFueX_iYB4-->
-<!--Resources
-https://developers.google.com/speed/libraries/devguide#jquery
 
-
--->
-<html>
-<head>
-  <div>
-
-
-
-    <!--Insert map from API-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>NYC Adventure Map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -31,7 +18,8 @@ https://developers.google.com/speed/libraries/devguide#jquery
         GUnload();
       });
 
-
+ //load window first 
+ // $(window).load(function)(){ 
       //if (GBrowserIsCompatible()) {
 
          // embed 2D map in DOM from pset8
@@ -50,19 +38,20 @@ https://developers.google.com/speed/libraries/devguide#jquery
 
 
           var map = new GMap2(document.getElementById("map_canvas"));
-          // center of map, zoom
+          // center of map at central park, zoom
           map.setCenter(new GLatLng(40.77464310, -73.97019620), 13);
 
-          var map = new GMap2(document.getElementById("map_canvas"));
+          //var map = new GMap2(document.getElementById("map_canvas"));
           
           $("section").each(function() {
-
-            var encoded = $(this).html();
-            var array_version = encoded.split("|");
+            //take the lat and lng from the rails below, split it into an array using the | 
+            var encoded_lat_lng = $(this).html();
+            var array_version = encoded_lat_lng.split("|");
             var lat = array_version[0];
             var lng = array_version[1];
             var point = new GLatLng(lat, lng);
             map.addOverlay(new GMarker(point));
+            
 
           });
           
@@ -83,17 +72,17 @@ https://developers.google.com/speed/libraries/devguide#jquery
 
 </script>
 
+<div id="left">
+  <div style="height:100%; width:100%;">
 
-<div style="height:100%; width:100%;">
-
-  <!--Map style on Webpage-->
-  <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; float:left; width: 50%">
+    <!--Map style on Webpage-->
+    <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; float:left; width: 50%; position: fixed; top: 0;">
+    </div>
   </div>
+
 </div>
 
-
-
-<!--Side recs on webpage-->
+<!--Side recs on webpage
 <div class="span4 boxy text-center" style="float:right; margin: 10px; width: 42%"> 
   New York Recs here
   <br/>
@@ -104,31 +93,31 @@ https://developers.google.com/speed/libraries/devguide#jquery
   and so am I 
   <br/>
   <br/>
-  and me too 
+  and me too -->
 
-  <div>
-    <% @pics.each do |pic| %>
-    <div class="span4 boxy text-center">
-      <h2>
-        <%= pic.place %>
-      </h2>
-         <%= pic.location %>
-         <section style="display: none;">
-            <%= pic.lat.to_s + "|" + pic.lng.to_s %>
-         </section>
+  <div id="right">
+
+
+    <div>
+      <% @picsAll.each do |pic| %>
+      <div class="span4 boxy text-center">
+        <h2>
+          <%= pic.place %>
+        </h2>
+        <%= pic.location %>
+        <section >
+          <%= pic.lat.to_s + "|" + pic.lng.to_s %>
+        </section>
+      </div>
+
+      <% end %> 
     </div>
 
-    <% end %> 
+
+
   </div>
 
+  <!--<div id="map-canvas"></div>-->
+
+
 </div>
-
-<!--<div id="map-canvas"></div>-->
-
-</head>
-<body>
-
-
-</body>
-
-</html>

@@ -45,8 +45,10 @@ gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 
 #install geokit gem 
-gem 'geokit'
+gem 'geokit-rails'
 #AIzaSyDzleZt1Cn-Ha1cn19cC8LOKVFueX_iYB4
+
+gem 'geocoder'
 
 group :test, :development do 
 

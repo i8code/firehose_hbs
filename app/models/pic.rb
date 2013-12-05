@@ -2,6 +2,7 @@ class Pic < ActiveRecord::Base
 	#field should map to schema 
 	#ImageUploader from the uploaders file 
 	mount_uploader :image, ImageUploader
+	acts_as_mappable
 
 	# validate that the user added text in form
 	validates :image, :presence => true
