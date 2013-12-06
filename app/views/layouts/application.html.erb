@@ -24,12 +24,13 @@
       <!-- Be sure to leave the brand out there if you want it shown -->
       <!-- <a class="brand" href="#">Hidden NYC</a> -->
 
+
       <!--  add CC to Ruby code -->
       <%= link_to 'Hidden NYC', root_path, :class => 'brand' %>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
-        <!-- .nav, .navbar-search, .navbar-form, etc // added from basic nav bootstrap-->
+        <!-- .nav, .navbar-search, .navbar-form, etc // added from basic nav bootstrap  #Pic.find(9)-->
         <ul class="nav">
         	<li>
         		<%= link_to 'Shhh...NYC', pics_path %>
@@ -38,7 +39,7 @@
         		<%= link_to 'Contribute', new_pic_path %>
         	</li>
             <li>
-            <%= link_to 'Map', Pic.find(9) %>
+            <%= link_to 'Map', pics_path%>
           </li>
     	</ul>
 
