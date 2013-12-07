@@ -20,7 +20,7 @@ class PicsController < ApplicationController
 		if params[:id].present?
 			@pic = Pic.find_by_id(params[:id])
 		
-			@picsNearby = Pic.within(2, origin: @pic)
+			@picsNearby = Pic.within(1, origin: @pic)
 		end
 			
 			
