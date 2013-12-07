@@ -20,6 +20,7 @@ class PicsController < ApplicationController
 		if params[:id].present?
 			@pic = Pic.find_by_id(params[:id])
 		
+			# show all places nearby 
 			@picsNearby = Pic.within(1, origin: @pic)
 		end
 			
