@@ -24,56 +24,39 @@
       localStorage.removeItem( 'firstLoad' );
   }
 })();
-
 </script>
 
-<script src="//maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E"
-type="text/javascript"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E&sensor=false"
+        type="text/javascript"></script>
 
 <script type="text/javascript">
-//$(function() {
-$(window).load(function  () {
+    
+    function initialize() {
+      var map = new google.maps.Map(
+        document.getElementById('map_canvas'), {
+          center: new google.maps.LatLng(40.7618, -73.9506),
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
 
-
-//$(document).ready(function() {
-  $( window ).unload(function() {
-    GUnload();
-  });
-  //load window first 
-  // $(window).load(function)(){ 
-      //if (GBrowserIsCompatible()) {
-  //function initialize() {
-    if (GBrowserIsCompatible()) {
-        var map = new GMap2(document.getElementById("map_canvas"));
-        // center of map at central park, zoom
-        map.setCenter(new GLatLng(40.77464310, -73.97019620), 13);
-        //map.setCenter(new GLatLng(@pic.lat, @pic.lat), 13);
-        //var map = new GMap2(document.getElementById("map_canvas"));
-        $("section").each(function() {
+      $("section").each(function() {
           //take the lat and lng from the rails below, split it into an array using the | 
           var encoded_lat_lng = $(this).html();
           var array_version = encoded_lat_lng.split("|");
           var lat = array_version[0];
           var lng = array_version[1];
           var place = array_version[2];
-          var point = new GLatLng(lat, lng);
-          //var marker = 
-          map.addOverlay(new GMarker(point, {title: 'hi'}));
-        
-           //map.addMarker(new MarkerOptions().position(point)
-                //.title(place));
-
+          //var point = new GLatLng(lat, lng);
           console.log(place)
-          //var title = loc; 
-          // marker.setTitle(place); 
-
-        });
-        // map.setCenter(new GLatLng(@picsNearby.lat, @picsNearby.lng), 13);
+          var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                map: map,
+                title: place
+          });
+      }); // Note the additional }); here to close the each loop above
     }
-  //}
-});
-
-</script>
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 <!--<div onload="initialize()" onunload="GUnload()">-->
   <div id="left">
@@ -118,6 +101,7 @@ $(window).load(function  () {
         <h2>
           <%= pic.place %>
         </h2>
+        <%= image_tag pic.image %>
         <%= pic.location %>
         <section >
           <%= pic.lat.to_s + "|" + pic.lng.to_s + "|" + pic.place %>
