@@ -58,7 +58,7 @@ $(window).load(function  () {
           var place = array_version[2];
           var point = new GLatLng(lat, lng);
           //var marker = 
-          //map.addOverlay(new GMarker(point, {title: 'hi'}));
+          map.addOverlay(new GMarker(point, {title: 'hi'}));
         
            //map.addMarker(new MarkerOptions().position(point)
                 //.title(place));
@@ -80,7 +80,7 @@ $(window).load(function  () {
     <div style="height:100%; width:100%;">
 
       <!--Map style on Webpage-->
-      <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; float:left; width: 50%; position: fixed; top: 0;">
+      <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; margin-top: 50px; width: 50%; position: fixed !important; top: 0;">
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@ $(window).load(function  () {
   <br/>
   <br/>
   and me too -->
-
+<div class="right-contain">
   <div id="right">
     <div id="one" class="hidden">
       <div class="span4 boxy text-center">
@@ -110,6 +110,7 @@ $(window).load(function  () {
         </section>
       </div>
     </div>
+
 
     <div id="nearby" >
       <% @picsNearby.each do |pic| %>
@@ -125,6 +126,7 @@ $(window).load(function  () {
       <% end %> 
     </div>
   </div>
+</div> <!-- right contain -->
 
 <!--<div id="map-canvas"></div>-->
 

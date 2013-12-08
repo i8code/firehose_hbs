@@ -7,51 +7,51 @@
   <%= csrf_meta_tags %>
 </head>
 <!--make a rule to change the background for each page-->
-<body class="<%= "#{params[:controller]}-#{params[:action]}" %>">
-
+<body>
+<div class="<%= "#{params[:controller]}-#{params[:action]}" %>"> 
 <!--bootstrap responsive nav-->
-<div class="navbar navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
- 
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
- 
-      <!-- Be sure to leave the brand out there if you want it shown -->
-      <!-- <a class="brand" href="#">Hidden NYC</a> -->
+<div class="fixednav">
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+   
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+   
+        <!-- Be sure to leave the brand out there if you want it shown -->
+        <!-- <a class="brand" href="#">Hidden NYC</a> -->
 
 
-      <!--  add CC to Ruby code -->
-      <%= link_to 'Hidden NYC', root_path, :class => 'brand' %>
- 
-      <!-- Everything you want hidden at 940px or less, place within here -->
-      <div class="nav-collapse collapse">
-        <!-- .nav, .navbar-search, .navbar-form, etc // added from basic nav bootstrap  change path for map to #Pic.find(9)-->
-        <ul class="nav">
-        	<li>
-        		<%= link_to 'Shhh...NYC', pics_path %>
-        	</li>
-        	<li>
-        		<%= link_to 'Contribute', new_pic_path %>
-        	</li>
-            <li>
-            <%= link_to 'Map', map_map_path%>
-          </li>
-    	</ul>
-
+        <!--  add CC to Ruby code -->
+        <%= link_to 'Hidden NYC', root_path, :class => 'brand' %>
+   
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc // added from basic nav bootstrap  change path for map to #Pic.find(9)-->
+          <ul class="nav">
+          	<li>
+          		<%= link_to 'Shhh...NYC', pics_path %>
+          	</li>
+          	<li>
+          		<%= link_to 'Contribute', new_pic_path %>
+          	</li>
+              <li>
+              <%= link_to 'Map', map_map_path%>
+            </li>
+      	</ul>
+        </div>
       </div>
- 
     </div>
   </div>
-</div>
+</div> <!-- navfixed -->
 
 
 <!--pulls in each pages info-->
 <%= yield %>
-
+<div> <!-- background-class -->
 </body>
 </html>

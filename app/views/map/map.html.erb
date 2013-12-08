@@ -58,36 +58,28 @@
 
 <div id="left">
   <div style="height:100%; width:100%;">
-
     <!--Map style on Webpage-->
-    <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; float:left; width: 50%; position: fixed; top: 0;">
+    <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; margin-top: 50px; width: 50%; position: fixed !important; top: 0;">
     </div>
   </div>
 
 </div>
 
-
-  <div id="right">
-
-
-    <div>
-      <% @pics.each do |pic| %>
-      <div class="span4 boxy text-center">
-        <h2>
-          <%= pic.place %>
-        </h2>
-        <%= pic.location %>
-        <section >
-          <%= pic.lat.to_s + "|" + pic.lng.to_s %>
-        </section>
+<div class="right-contain">
+    <div id="right">
+      <div>
+        <% @pics.each do |pic| %>
+        <div class="span4 boxy text-center">
+          <h2>
+            <%= pic.place %>
+          </h2>
+          <%= pic.location %>
+          <section >
+            <%= pic.lat.to_s + "|" + pic.lng.to_s %>
+          </section>
+        </div>
+        <% end %> 
       </div>
-
-      <% end %> 
     </div>
-
-
-
   </div>
-
-
-</div>
+</div> <!-- right contain -->

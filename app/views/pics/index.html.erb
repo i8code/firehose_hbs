@@ -1,20 +1,20 @@
-<h1 class="h1-custom">
-	New York! 
-</h1>
+
+	<h1 class="h1-custom" style="margin-top: 0px;">
+		New York! 
+	</h1>
+	<div> 
+	<% @pics.each do |pic| %>
+
+	<div class="span4 boxy text-center">
+		<h2>
+			<%= pic.place %>
+		</h2>
 
 
-<% @pics.each do |pic| %>
-<div class="span4 boxy text-center">
-	<h2>
-		<%= pic.place %>
-	</h2>
+		<!-- display the image-->
+		<%= image_tag pic.image %>
 
-
-<!-- display the image-->
-<%= image_tag pic.image %>
-
-	<br/>
-	<body>
+		<br/>
 		<br/>
 		<%= pic.description %>
 		<br/>
@@ -23,8 +23,9 @@
 		<%= link_to pic.location, pic%>
 		<br/>
 
-	</div>
-<% end %> 
+	</div> <!-- boxy -->
+	<% end %> 
+</div>
 
 
 
