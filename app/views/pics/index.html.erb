@@ -1,10 +1,10 @@
 
-	<h1 class="h1-custom" style="margin-top: 0px;">
-		New York! 
-	</h1>
-	<div> 
+<h1 class="h1-custom" style="margin-top: 0px;">
+	New York! 
+</h1>
+<div> 
+	<!--go through all items in database-->
 	<% @pics.each do |pic| %>
-
 	<div class="span4 boxy text-center">
 		<h2>
 			<%= pic.place %>
@@ -13,13 +13,13 @@
 		<%= image_tag pic.image %>
 		<br/>
 		<br/>
+		<!-- display the image description-->
 		<%= pic.description %>
 		<br/>
 		<br/>
 		<!--<%= pic.location %>-->
 		<%= link_to pic.location, pic%>
 		<br/>
-
 	</div> <!-- boxy -->
 	<% end %> 
 </div>

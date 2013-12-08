@@ -1,16 +1,10 @@
-<div>
-  <ul id="showall" class="nav nav-pills" style="float:right; margin: 10px; width: 42%;">
-    <li class="active"><%= link_to 'Show all', map_map_path%> </li>
-  </ul>
-</div>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <title>NYC Adventure Map</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 
 <script type='text/javascript'>
-
+// Refresh page
 (function()
 {
   if( window.localStorage )
@@ -27,14 +21,12 @@
 </script>
 
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCPLbu8YjZRwomPf5PC6rIEwAuv57GfR5E&sensor=false"
-        type="text/javascript"></script>
-
+type="text/javascript"></script>
 <script type="text/javascript">
-    
     function initialize() {
       var map = new google.maps.Map(
         document.getElementById('map_canvas'), {
-          center: new google.maps.LatLng(40.7618, -73.9506),
+          center: new google.maps.LatLng(40.7687, -73.9364),
           zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP
       });
@@ -51,21 +43,22 @@
                 position: new google.maps.LatLng(lat, lng),
                 map: map,
                 title: place
-          });
+        });
       }); 
+
     }
     google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+</script>
 
 <!--<div onload="initialize()" onunload="GUnload()">-->
-  <div id="left">
-    <div style="height:100%; width:100%;">
+<div id="left">
+  <div style="height:100%; width:100%;">
 
-      <!--Map style on Webpage-->
-      <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; margin-top: 50px; width: 50%; position: fixed !important; top: 0;">
-      </div>
+    <!--Map style on Webpage-->
+    <div id="map_canvas" style="width: 500px; height: 1000px; margin: 10px; margin-top: 50px; width: 50%; position: fixed !important; top: 0;">
     </div>
   </div>
+</div>
 
 <div class="right-contain">
   <div id="right">
@@ -80,7 +73,6 @@
         </section>
       </div>
     </div>
-
 
     <div id="nearby" >
       <% @picsNearby.each do |pic| %>
@@ -99,6 +91,3 @@
   </div>
 </div> <!-- right contain -->
 
-<!--<div id="map-canvas"></div>-->
-
-<!--</div>-->
