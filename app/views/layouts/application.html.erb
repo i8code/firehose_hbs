@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <!--make a rule to change the background for each page-->
-<body>
-<div class="<%= "#{params[:controller]}-#{params[:action]}" %>"> 
+<body class="<%= "#{params[:controller]}-#{params[:action]}" %>">
+
 <!--bootstrap responsive nav-->
 <div class="fixednav">
   <div class="navbar navbar-inverse">
@@ -48,10 +48,7 @@
     </div>
   </div>
 </div> <!-- navfixed -->
-
-
 <!--pulls in each pages info-->
 <%= yield %>
-<div> <!-- background-class -->
 </body>
 </html>

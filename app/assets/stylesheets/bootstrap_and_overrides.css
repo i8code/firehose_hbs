@@ -21,7 +21,6 @@
     padding: 5%;
     margin-bottom:15px;
     min-height:500px;
-    
   }
 
    .fixednav {
@@ -43,13 +42,19 @@
   }
 
   input[type="file"] {
-
   	width:175px;
   }
 
   body.pics-index {
-
   	background: url('nytaxi.jpg') no-repeat center center fixed; 
+  }
+
+  body.pics-show {
+    background: url('nytaxi.jpg') no-repeat center center fixed; 
+  }
+
+  body.map-map {
+    background: url('nytaxi.jpg') no-repeat center center fixed; 
   }
 
   .h1-custom{
